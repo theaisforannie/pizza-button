@@ -1,0 +1,18 @@
+<html>
+<body>
+{% if state == "ready" %}
+Can we have pizza?
+<form action="/pizza_request" method="post">
+  <input type="submit" value="Pretty please?">
+</form>
+{% elif state == "requested" %}
+Your order has been sent to Momma for approval! Good luck!
+{% elif state == "ordered" %}
+Congratulations! You're getting pizza!
+{% elif state == "rejected" %}
+Sorry, no pizza today :(
+{% else %}
+Unknown state: {{ state }}
+{% endif %}
+</body>
+</html>
